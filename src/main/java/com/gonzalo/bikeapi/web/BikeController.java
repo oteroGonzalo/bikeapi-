@@ -30,8 +30,8 @@ public class BikeController {
 
     @Cacheable("bikes")
     @Operation(summary = "Retrieve bikes by name")
-    @GetMapping("/{name}/{orderBy}")
-    public ResponseEntity<Bike> findByName(@PathVariable String name, @PathVariable(required = false) String orderBy) {
+    @GetMapping("/{name}")
+    public ResponseEntity<Bike> findByName(@PathVariable String name) {
         Bike bike = bikeService.findByName(name);
         if (bike != null) {
             return new ResponseEntity<Bike>(bikeService.findByName(name), HttpStatus.ACCEPTED);

@@ -29,9 +29,7 @@ public class BikeServiceImpl implements BikeService {
 
     @Cacheable("bike")
     public Bike findByName(String name) {
-
         return bikeRepository.findByName(name);
-
     }
 
     @Override
