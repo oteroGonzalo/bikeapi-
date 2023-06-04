@@ -29,6 +29,7 @@ Clone the project and use Maven to launch the project
 In case you want to build the project using Docker introduce the following commands in your terminal after cloning the repo. 
 
   `docker build -t bikeapi .`
+  
   `docker run -p 8080:8080 bikeapi`
   
   
