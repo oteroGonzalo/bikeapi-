@@ -7,6 +7,8 @@ import com.gonzalo.bikeapi.entity.Bike;
 public interface BikeService {
     Bike saveBike(Bike bike);
 
+    List<Bike> getBikes();
+
     Bike findByName(String name);
 
     List<Bike> findByItemType(String type);

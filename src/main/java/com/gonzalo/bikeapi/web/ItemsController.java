@@ -1,8 +1,11 @@
 package com.gonzalo.bikeapi.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +27,12 @@ public class ItemsController {
     @PostMapping
     public ResponseEntity<Items> saveItem(@RequestBody Items item) {
         return new ResponseEntity<Items>(itemsService.saveItem(item), HttpStatus.CREATED);
+    }
+
+    @Operation(summary = "Retrieves all items")
+    @GetMapping
+    public ResponseEntity<List<Items>> getItems() {
+        return new ResponseEntity<List<Items>>(itemsService.getItems(), HttpStatus.OK);
     }
 
 }

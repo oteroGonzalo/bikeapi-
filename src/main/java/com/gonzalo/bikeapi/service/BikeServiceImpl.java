@@ -32,6 +32,10 @@ public class BikeServiceImpl implements BikeService {
         return bikeRepository.findByName(name);
     }
 
+    public List<Bike> getBikes() {
+        return bikeRepository.findAll();
+    }
+  
     @Override
     @Cacheable("bikeList")
     public List<Bike> findByItemType(String type) {

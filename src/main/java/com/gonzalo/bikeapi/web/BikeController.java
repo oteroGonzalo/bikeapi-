@@ -29,7 +29,7 @@ public class BikeController {
     BikeService bikeService;
 
     @Cacheable("bikes")
-    @Operation(summary = "Retrieve bikes by name")
+    @Operation(summary = "Retrieve bike by name")
     @GetMapping("/{name}")
     public ResponseEntity<Bike> findByName(@PathVariable String name) {
         Bike bike = bikeService.findByName(name);
@@ -38,6 +38,11 @@ public class BikeController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
+    }
+    @Operation(summary = "Retrieve all bikes")
+    @GetMapping
+    public ResponseEntity<List<Bike>> getBikes() {
+        return new ResponseEntity<List<Bike>>(bikeService.getBikes(), HttpStatus.OK);
     }
 
     @Operation(summary = "Retrieve bikes by item type")

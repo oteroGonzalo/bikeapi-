@@ -1,6 +1,8 @@
 package com.gonzalo.bikeapi.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,10 @@ public class ItemsServiceImpl implements ItemsService {
     ItemsRepository itemsRepository;
     @Autowired
     BikeRepository bikeRepository;
+
+    public List<Items> getItems() {
+        return itemsRepository.findAll();
+    }
 
     public Items saveItem(Items item) {
         return itemsRepository.save(item);
