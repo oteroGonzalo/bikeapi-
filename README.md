@@ -22,17 +22,15 @@ You will need:
 
 Clone the project and use Maven to launch the project
 
- `mvn clean spring-boot:run`                                                                                                                                                                      
-
-  
+ `mvn clean spring-boot:run`                             
 
 ## Build with Docker
 
 In case you want to build the project using Docker introduce the following commands in your terminal after cloning the repo. 
 
-	`docker build -t bikeapi .`
-  
+  `docker build -t bikeapi .`
   `docker run -p 8080:8080 bikeapi`
+  
   
 ## Accessing the API
 You can access the endpoints with Postman 
